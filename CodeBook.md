@@ -19,10 +19,16 @@ A - INPUT FILE READING
     train/X_train.txt, train/y_train.txt, train/subject_train
     ==>Stored in dataframe's named as the files.
 
-B - SELECT RELEVANT COLUMNS
+B - SELECT RELEVANT COLUMNS AND TIDY THE VARIABLE NAMING
 Only features containing the string "mean" an "std" are selected, thanks to grep function.
-Then the corresponding names are modified to remove special character such as (),-, which can make the variable names difficult to manipulate. Also, uppercase are removed.
-  ==>These names are stored in a variable columns_names.
+The result of grep is a list of numbers indicating the lines in dataframe features that are matching the criteria
+==>list columns
+
+The features name for the lines listed in columns are stored in a new list.
+==>list columns_names
+
+These names are modified to remove special character such as (),-, which can make the variable names difficult to manipulate, with the gsub() command. Also, uppercase are removed with tolower() command.
+==>all these changes are performed in the same list columns_names.
 
 C - ASSEMBLING OF THE DATA IN ONE SINGLE DATA SET
 
