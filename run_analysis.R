@@ -1,6 +1,6 @@
 ##
 #
-# Pre-requisite : the input file must downloaded and unziped in the working directory
+# Pre-requisite : prior to script execution, the input file must be downloaded and unziped in the working directory
 #
 library(dplyr)
 
