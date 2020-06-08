@@ -20,11 +20,12 @@ A - INPUT FILE READING
 B - SELECT RELEVANT COLUMNS
 Only the features containing the string "mean" an "std" are selected thanks to grep function.
 Then the corresponding names are modified to remove special character such as (),-, which make the names difficult to read. Also, uppercase are removed.
+These names are stored in a variable columns_names.
 
 C - ASSEMBLING OF THE DATA IN ONE SINGLE DATA SET
 
 lines are assembled with rbind(), to have one single dataset for test and train on the three set of variables.
-Then the X data set is truncated to select only the "mean" and "std" columns cretaed in B.
+Then the X data set is truncated to select only the "mean" and "std" columns created in B (variabls columns_names)
 Finally, the full dataset is assembled with cbind between Subjetc, Y and X.
 
 D - REPLACE THE ACTIVITYIF BY ITS NAME
@@ -32,10 +33,8 @@ The name is taken from the activity_label file.
 
 E - SUMMARIZE THE DATA
 The script uses the group_by function to summarize the mean values by subject_id and activity.
-In the result datasset, there will therefore be 30 subjects * 6 activities = 180 lines
+The mean value for all variables is then computed by the function summarise_all.
+In the result datas set, there will therefore be 30 subjects * 6 activities = 180 lines
 
 F - WRITE THE DATA ON AN EXTERNAL FILE
-
-
-
-
+As specified in the instructions.
